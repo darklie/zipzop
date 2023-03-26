@@ -12,6 +12,7 @@ Zipzop is recompression tool that uses Google's compression ratio optimization i
 
 Things necessary
 ----
+※Windows版については巻末参照
 
  - [zlib](http://www.zlib.net/)
    - deflate is used to decompress files in compressed archives.
@@ -58,3 +59,18 @@ This program uses the following libraries:
  - zopfli (Copyright 2011 Google Inc. All Rights Reserved.)
  - zlib (Copyright 1995-2012 Jean-loup Gailly and Mark Adler.)
 
+Wnidows版について
+----
+
+Visual Studio 2017(Communty Edition可)を用いてWindowsのexeファイルとしてビルドすることができます。
+
+使用する以下のライブラリはNuGetまたはソースのインポート済みなので別途用意する必要はありません。
+- zlib from NuGet
+- zopfli from https://github.com/echovoice/zopfli
+
+zipzop.slnをVisual Studio 2017で開き、"ビルド" > "ソリューションのビルド"を実行してください。
+- プラットフォーム"Win32"でビルド → zipzop.exe(32bit版)
+- プラットフォーム"x64"でビルド → zipzop-x64.exe(64bit版)
+（Debug/またはRelease/フォルダ配下に生成）
+
+バイナリはstaticビルドされていますのでexeファイルのみで実行できます。別途ランタイムのインストールは不要です。
